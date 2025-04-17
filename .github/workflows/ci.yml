@@ -1,0 +1,45 @@
+name: Continuous integration
+
+concurrency:
+  group: ${{ github.head_ref }}${{ github.ref }}-wallet-sdk
+  cancel-in-progress: true
+on:
+  pull_request:
+    branches:
+      - "main"
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build-and-test:
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: "true"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          
+      - name: Install
+        run: yarn
+
+      - name: Eslint
+        run: npx eslint .
+
+      - name: Build
+        run: npm run build
+
+      - name: Npm audit
+        uses: oke-py/npm-audit-action@v2.4.4
+        with:
+          audit_level: moderate
+          create_issues: false
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          production_flag: true
