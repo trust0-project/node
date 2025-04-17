@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -32,7 +32,7 @@
     "@types/node": "^20",
     "eslint": "^8",
     "typescript": "^5",
-    "rollup":"^4.28.1",
+    "rollup": "^4.28.1",
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-json": "^6.1.0",
     "@types/react": "^18",
