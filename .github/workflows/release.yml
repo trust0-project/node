@@ -2,7 +2,10 @@ name: Release trust0-node
 
 on:
   workflow_dispatch:
-
+  push:
+    branches:
+      - "main"
+      
 jobs:
   release:
     runs-on: ubuntu-latest
