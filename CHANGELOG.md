@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/trust0-project/node/compare/v1.1.0...v1.1.1) (2025-04-18)
+
+### Bug Fixes
+
+* correct ws options ([f1bc5a8](https://github.com/trust0-project/node/commit/f1bc5a8e3679e70e45984a75ee992371a4f02d3f))
+
 ## [1.1.0](https://github.com/trust0-project/node/compare/v1.0.1...v1.1.0) (2025-04-18)
 
 ### Features
