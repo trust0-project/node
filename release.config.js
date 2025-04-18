@@ -16,7 +16,8 @@ export default{
       ['@semantic-release/changelog', { changelogFile: 'CHANGELOG.md' }],
       ['@semantic-release/exec', { "prepareCmd": 'npm version ${nextRelease.version} --git-tag-version false'}],
       ['@semantic-release/exec', { "prepareCmd": 'npm run build'}],
-      ['@semantic-release/exec', { "prepareCmd": 'npm publish --access public'}],
+      "@semantic-release/github",
+      "@semantic-release/npm",
       [
         '@semantic-release/git',
         {
