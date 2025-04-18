@@ -27,20 +27,20 @@ export type CreateNodeOptions = {
   bootstrap?: Multiaddr[];
   delegatedRouting?: string;
   trustlessGateways?: string[];
-  websockets?: WebSocketsOptions;
 }
 
-export type RequiredCreateNodeOptions = Omit<Required<CreateNodeOptions>, 'sk' | 'delegatedRouting' | 'trustlessGateways' | 'websockets'> & {
+export type RequiredCreateNodeOptions = Omit<Required<CreateNodeOptions>, 'sk' | 'delegatedRouting' | 'trustlessGateways' > & {
   delegatedRouting?: string;
   trustlessGateways?: string[];
   sk?: string;
+  websockets?: WebSocketsOptions;
 };
 
 export type CreateHeliaOptions = {   
   libp2p: Libp2p<NodeServices>,
   datastore: MemoryDatastore,
   blockstore: MemoryBlockstore
-} & Pick<CreateNodeOptions, 'delegatedRouting' | 'trustlessGateways' | 'websockets'>
+} & Pick<CreateNodeOptions, 'delegatedRouting' | 'trustlessGateways' >
 
 export function buildConfig(options: CreateNodeOptions): RequiredCreateNodeOptions {
   const bootstrap = options.bootstrap || RELAY_MULTI_ADDR
