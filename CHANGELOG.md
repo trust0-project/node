@@ -1,3 +1,9 @@
+## [1.1.2-rc.1](https://github.com/trust0-project/node/compare/v1.1.1...v1.1.2-rc.1) (2025-04-18)
+
+### Bug Fixes
+
+* small fix ([673d8f0](https://github.com/trust0-project/node/commit/673d8f0867e43070496a66357c6b48259470517d))
+
 ## [1.1.1](https://github.com/trust0-project/node/compare/v1.1.0...v1.1.1) (2025-04-18)
 
 ### Bug Fixes
