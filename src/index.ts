@@ -9,7 +9,7 @@ import { privateKeyFromRaw } from '@libp2p/crypto/keys';
 import { trustlessGateway,  bitswap, } from '@helia/block-brokers'
 import { delegatedHTTPRouting, httpGatewayRouting, libp2pRouting } from '@helia/routers'
 import { bootstrap as libp2pBootstrap} from '@libp2p/bootstrap'
-import { Addresses, NodeType } from './types';
+import { Addresses, NodeType, WebSocketsOptions } from './types';
 
 import { getDefaultServices, NodeServices } from './services';
 import { getDefaultTransports } from './transports';
@@ -27,9 +27,10 @@ export type CreateNodeOptions = {
   bootstrap?: Multiaddr[];
   delegatedRouting?: string;
   trustlessGateways?: string[];
+  websockets?: WebSocketsOptions;
 }
 
-export type RequiredCreateNodeOptions = Omit<Required<CreateNodeOptions>, 'sk' | 'delegatedRouting' | 'trustlessGateways'> & {
+export type RequiredCreateNodeOptions = Omit<Required<CreateNodeOptions>, 'sk' | 'delegatedRouting' | 'trustlessGateways' | 'websockets'> & {
   delegatedRouting?: string;
   trustlessGateways?: string[];
   sk?: string;
@@ -39,7 +40,7 @@ export type CreateHeliaOptions = {
   libp2p: Libp2p<NodeServices>,
   datastore: MemoryDatastore,
   blockstore: MemoryBlockstore
-} & Pick<CreateNodeOptions, 'delegatedRouting' | 'trustlessGateways'>
+} & Pick<CreateNodeOptions, 'delegatedRouting' | 'trustlessGateways' | 'websockets'>
 
 export function buildConfig(options: CreateNodeOptions): RequiredCreateNodeOptions {
   const bootstrap = options.bootstrap || RELAY_MULTI_ADDR
