@@ -1,3 +1,4 @@
+/** libp2p configuration for trust0 p2p network */
 import { noise } from '@chainsafe/libp2p-noise'
 import { yamux } from '@chainsafe/libp2p-yamux';
 import { createLibp2p, Libp2p } from 'libp2p';
