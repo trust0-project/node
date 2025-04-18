@@ -1,4 +1,4 @@
-import { webSockets, WebSocketsInit } from '@libp2p/websockets';
+import { webSockets } from '@libp2p/websockets';
 import * as filters from '@libp2p/websockets/filters';
 import { circuitRelayTransport } from '@libp2p/circuit-relay-v2';
 import { webRTC, webRTCDirect } from '@libp2p/webrtc';

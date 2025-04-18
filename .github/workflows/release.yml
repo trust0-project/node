@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - "main"
-      
+      - "develop"
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -42,5 +42,5 @@ jobs:
           GIT_COMMITTER_NAME: ${{ steps.import_gpg.outputs.name }}
           GITHUB_TOKEN: ${{ secrets.GH_SECRET }}
         run: |
-          npm install
+          yarn
           npx semantic-release

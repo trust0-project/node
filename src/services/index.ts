@@ -1,6 +1,6 @@
 import { circuitRelayServer, CircuitRelayService } from '@libp2p/circuit-relay-v2';
 import { identify, Identify, IdentifyPush, identifyPush } from '@libp2p/identify';
-import { ping, PingService } from '@libp2p/ping';
+import { ping, Ping } from '@libp2p/ping';
 import { delegatedHTTPRoutingDefaults } from '@helia/routers'
 import { KadDHT, kadDHT } from '@libp2p/kad-dht';
 import { removePrivateAddressesMapper, removePublicAddressesMapper } from '@libp2p/kad-dht'
@@ -15,7 +15,7 @@ import { NodeType } from '../types';
 
 export type NodeServices = {
     identify: Identify,
-    ping: PingService, 
+    ping: Ping, 
     lanDHT: KadDHT,
     aminoDHT: KadDHT,
     dcutr?: unknown,
