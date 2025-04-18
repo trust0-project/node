@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/trust0-project/node/compare/v1.0.1...v1.1.0) (2025-04-18)
+
+### Features
+
+* integrate custom http server for websockets ([4cc124f](https://github.com/trust0-project/node/commit/4cc124f5a19ecfeee631cbc903bf787c02eb12a3))
+
 ## [1.0.1](https://github.com/trust0-project/node/compare/v1.0.0...v1.0.1) (2025-04-17)
 
 ### Bug Fixes
