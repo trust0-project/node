@@ -1,3 +1,9 @@
+## [1.1.2-rc.2](https://github.com/trust0-project/node/compare/v1.1.2-rc.1...v1.1.2-rc.2) (2025-04-18)
+
+### Bug Fixes
+
+* release candidate ([77d3f2d](https://github.com/trust0-project/node/commit/77d3f2d0c65247e446091d8b6b35f3f10fa22d46))
+
 ## [1.1.2-rc.1](https://github.com/trust0-project/node/compare/v1.1.1...v1.1.2-rc.1) (2025-04-18)
 
 ### Bug Fixes
