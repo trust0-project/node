@@ -18,7 +18,7 @@ export function createX25519PublicKeyFromEd25519PublicKey(
 }
 
 export async function getPeerIDDID(peer: PeerId): Promise<SDK.Domain.DID> {
-  const publicKey = peer.publicKey?.raw.slice(4);
+  const publicKey = peer.publicKey?.raw;
   if (!publicKey) {
     throw new Error("No public key in peerId");
   }
