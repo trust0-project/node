@@ -1,3 +1,9 @@
+## [1.1.2-rc.4](https://github.com/trust0-project/node/compare/v1.1.2-rc.3...v1.1.2-rc.4) (2025-04-19)
+
+### Bug Fixes
+
+* core and shared exposure ([5792dfe](https://github.com/trust0-project/node/commit/5792dfeff0ab01bfba2c79b415dc3e49e3d55993))
+
 ## [1.1.2-rc.3](https://github.com/trust0-project/node/compare/v1.1.2-rc.2...v1.1.2-rc.3) (2025-04-19)
 
 ### Bug Fixes
