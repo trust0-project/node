@@ -1,3 +1,9 @@
+## [1.1.2-rc.3](https://github.com/trust0-project/node/compare/v1.1.2-rc.2...v1.1.2-rc.3) (2025-04-19)
+
+### Bug Fixes
+
+* add core and shared ([9270ba9](https://github.com/trust0-project/node/commit/9270ba98cbf1bdfd5fb84479c11c6cdd8c0c2807))
+
 ## [1.1.2-rc.2](https://github.com/trust0-project/node/compare/v1.1.2-rc.1...v1.1.2-rc.2) (2025-04-18)
 
 ### Bug Fixes
