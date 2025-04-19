@@ -1,3 +1,9 @@
+## [1.1.2-rc.5](https://github.com/trust0-project/node/compare/v1.1.2-rc.4...v1.1.2-rc.5) (2025-04-19)
+
+### Bug Fixes
+
+* unpack and send ([bfe3c29](https://github.com/trust0-project/node/commit/bfe3c29f42a1a86349d37c9230839ca691e72cf8))
+
 ## [1.1.2-rc.4](https://github.com/trust0-project/node/compare/v1.1.2-rc.3...v1.1.2-rc.4) (2025-04-19)
 
 ### Bug Fixes
