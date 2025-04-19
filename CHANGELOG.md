@@ -1,3 +1,9 @@
+## [1.1.2-rc.6](https://github.com/trust0-project/node/compare/v1.1.2-rc.5...v1.1.2-rc.6) (2025-04-19)
+
+### Bug Fixes
+
+* remove slice ([c485e7f](https://github.com/trust0-project/node/commit/c485e7f97b58f8516dd13007d7f0bcc23d84bdc9))
+
 ## [1.1.2-rc.5](https://github.com/trust0-project/node/compare/v1.1.2-rc.4...v1.1.2-rc.5) (2025-04-19)
 
 ### Bug Fixes
