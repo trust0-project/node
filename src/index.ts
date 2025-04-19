@@ -19,6 +19,9 @@ import { multiaddr, Multiaddr } from '@multiformats/multiaddr';
 
 export * from './config'
 export * from './types'
+export * from './core'
+export * from './shared'
+
 export { NodeServices } from './services'
 
 export type CreateNodeOptions = {
