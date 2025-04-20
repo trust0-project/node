@@ -11,6 +11,9 @@ import { Multiaddr } from '@multiformats/multiaddr';
 import { generateKeyPair,  } from "@libp2p/crypto/keys";
 import { convertSecretKeyToX25519 } from '@stablelib/ed25519';
 
+const apollo = new SDK.Apollo();
+const castor = new SDK.Castor(apollo);
+
 export class Network {
  
 
@@ -72,17 +75,23 @@ export class Network {
     try {
         keyInfo = await this.p2p.services.keychain.findKeyByName(keyName)
     } catch (error) {
-        const ed25519Key = await generateKeyPair('Ed25519')
-        const x25519Key = await convertSecretKeyToX25519(ed25519Key.raw)
-        await this.pluto.storePrivateKey(
-          new SDK.Ed25519PrivateKey(ed25519Key.raw)
+        const nodeEd25519Key = await generateKeyPair('Ed25519')
+        const ed25519KeyRaw = nodeEd25519Key.raw
+        const x25519KeyRaw = await convertSecretKeyToX25519(ed25519KeyRaw)
+        const ed25519Key = new SDK.Ed25519PrivateKey(x25519KeyRaw);
+        const x25519Key = new SDK.X25519PrivateKey(x25519KeyRaw);
+        const didKeys = [
+          ed25519Key, 
+          x25519Key
+        ]
+        const did = await castor.createPeerDID(
+          didKeys.map(k => k.publicKey()), 
+          []
         )
-        await this.pluto.storePrivateKey(
-          new SDK.X25519PrivateKey(x25519Key)
-        )
-        keyInfo = await this.p2p.services.keychain.importKey(keyName, ed25519Key)
+        await this.pluto.storeDID(did, didKeys, email)
+        keyInfo = await this.p2p.services.keychain.importKey(keyName, nodeEd25519Key);
     } finally {
-        return this.p2p.services.keychain.exportKey(keyName);
+        return this.p2p.services.keychain.exportKey(keyInfo!.id);
     }
 }
 
