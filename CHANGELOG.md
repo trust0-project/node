@@ -1,3 +1,9 @@
+## [1.1.2-rc.8](https://github.com/trust0-project/node/compare/v1.1.2-rc.7...v1.1.2-rc.8) (2025-04-20)
+
+### Bug Fixes
+
+* mercury is external ([9359cf7](https://github.com/trust0-project/node/commit/9359cf75f6600bd9ee84b8263183691452b0c0d7))
+
 ## [1.1.2-rc.7](https://github.com/trust0-project/node/compare/v1.1.2-rc.6...v1.1.2-rc.7) (2025-04-20)
 
 ### Bug Fixes
