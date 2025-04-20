@@ -1,3 +1,9 @@
+## [1.1.2-rc.11](https://github.com/trust0-project/node/compare/v1.1.2-rc.10...v1.1.2-rc.11) (2025-04-20)
+
+### Bug Fixes
+
+* add didcomm service to dids created in the Network ([7127034](https://github.com/trust0-project/node/commit/712703419b4f102ab3cd0fc58a7511eb43c3bf38))
+
 ## [1.1.2-rc.10](https://github.com/trust0-project/node/compare/v1.1.2-rc.9...v1.1.2-rc.10) (2025-04-20)
 
 ### Bug Fixes
