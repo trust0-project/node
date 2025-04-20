@@ -46,6 +46,7 @@ export class Network {
     const pluto = new SDK.Pluto(store, apollo);
     const protocol = new SDK.DIDCommWrapper(apollo, castor, pluto);
     const fetchApi = new SDK.ApiImpl();
+    await pluto.start();
     return new SDK.Mercury(castor, protocol, fetchApi);
   }
 
