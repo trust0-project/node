@@ -86,7 +86,13 @@ export class Network {
         ]
         const did = await castor.createPeerDID(
           didKeys.map(k => k.publicKey()), 
-          []
+          [
+            new SDK.Domain.Service("didcomm", ["DIDCommMessaging"], {
+              uri: "#",
+              accept: ["didcomm/v2"],
+              routingKeys: [],
+          })
+          ]
         )
         await this.pluto.storeDID(did, didKeys, email)
         keyInfo = await this.p2p.services.keychain.importKey(keyName, nodeEd25519Key);
