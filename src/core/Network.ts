@@ -12,14 +12,7 @@ import { NodeServices } from '../services';
 import { Multiaddr } from '@multiformats/multiaddr';
 
 export class Network {
-  private _mercury!: SDK.Mercury;
-
-  get mercury() {
-    if (!this._mercury) {
-      throw new Error("Mercury not initialized");
-    }
-    return this._mercury;
-  }
+ 
 
   get peer() {
     if (!this.p2p) return null;
@@ -31,24 +24,10 @@ export class Network {
     public storage: StorageInterface,
     public didWebHostname: string,
     public p2p: Libp2p<NodeServices>,
-    public abortController: AbortController
+    public abortController: AbortController,
+    private mercury: SDK.Domain.Mercury,
+    private pluto: SDK.Pluto
   ) { }
-
-  private async loadMercury() {
-    const apollo = new SDK.Apollo();
-    const castor = new SDK.Castor(apollo);
-    const level = await createLevelDB();
-    const store = new RIDBStore({
-      dbName: 'identus',
-      //TODO: potential issues here
-      storageType: level as any
-    })
-    const pluto = new SDK.Pluto(store, apollo);
-    const protocol = new SDK.DIDCommWrapper(apollo, castor, pluto);
-    const fetchApi = new SDK.ApiImpl();
-    await pluto.start();
-    return new SDK.Mercury(castor, protocol, fetchApi);
-  }
 
   static getServicesForPeerDID(peerId: PeerId): SDK.Domain.Service[] {
     return [
@@ -69,7 +48,9 @@ export class Network {
   }
 
   private async load() {
-    this._mercury ??= await this.loadMercury();
+    if (this.pluto.state !== SDK.Domain.Startable.State.RUNNING) {
+      await this.pluto.start();
+    }
   }
 
   public async packMessage(
