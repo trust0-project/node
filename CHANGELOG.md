@@ -1,3 +1,9 @@
+## [1.1.2-rc.9](https://github.com/trust0-project/node/compare/v1.1.2-rc.8...v1.1.2-rc.9) (2025-04-20)
+
+### Bug Fixes
+
+* storage shared keys ([5b5f476](https://github.com/trust0-project/node/commit/5b5f47615ff13c872ebe01b224fd49c867f5d3be))
+
 ## [1.1.2-rc.8](https://github.com/trust0-project/node/compare/v1.1.2-rc.7...v1.1.2-rc.8) (2025-04-20)
 
 ### Bug Fixes
