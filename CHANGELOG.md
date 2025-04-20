@@ -1,3 +1,9 @@
+## [1.1.2-rc.10](https://github.com/trust0-project/node/compare/v1.1.2-rc.9...v1.1.2-rc.10) (2025-04-20)
+
+### Bug Fixes
+
+* improve key storage ([de601ce](https://github.com/trust0-project/node/commit/de601ceaafd4fd67ba30741c87212c3e5faaaad5))
+
 ## [1.1.2-rc.9](https://github.com/trust0-project/node/compare/v1.1.2-rc.8...v1.1.2-rc.9) (2025-04-20)
 
 ### Bug Fixes
