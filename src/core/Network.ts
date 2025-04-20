@@ -1,15 +1,15 @@
 import SDK from '@hyperledger/identus-edge-agent-sdk';
-import { RIDBStore } from '@trust0/identus-store'
-import createLevelDB from '@trust0/ridb-level';
 import { Libp2p } from 'libp2p';
 import { pipe } from 'it-pipe';
-
+import { KeyInfo } from "@libp2p/keychain";
 import { PROTOCOLS, StorageInterface } from '../types';
 import { ProtocolMessage } from './message';
-import { PeerId } from '@libp2p/interface';
+import { PeerId, PrivateKey } from '@libp2p/interface';
 import { getPeerIDDID } from './crypto';
 import { NodeServices } from '../services';
 import { Multiaddr } from '@multiformats/multiaddr';
+import { generateKeyPair,  } from "@libp2p/crypto/keys";
+import { convertSecretKeyToX25519 } from '@stablelib/ed25519';
 
 export class Network {
  
@@ -62,6 +62,29 @@ export class Network {
     );
     return Buffer.from(packed);
   }
+
+  async getKeyPair(email: string) {
+    if (!this.p2p.services.keychain) {
+        throw new Error('Keychain not initialized');
+    }
+    const keyName = `key-${Buffer.from(email).toString('hex')}`;
+    let keyInfo: KeyInfo;
+    try {
+        keyInfo = await this.p2p.services.keychain.findKeyByName(keyName)
+    } catch (error) {
+        const ed25519Key = await generateKeyPair('Ed25519')
+        const x25519Key = await convertSecretKeyToX25519(ed25519Key.raw)
+        await this.pluto.storePrivateKey(
+          new SDK.Ed25519PrivateKey(ed25519Key.raw)
+        )
+        await this.pluto.storePrivateKey(
+          new SDK.X25519PrivateKey(x25519Key)
+        )
+        keyInfo = await this.p2p.services.keychain.importKey(keyName, ed25519Key)
+    } finally {
+        return this.p2p.services.keychain.exportKey(keyName);
+    }
+}
 
   public async unpackMessage(message: Uint8Array) {
     await this.load();
