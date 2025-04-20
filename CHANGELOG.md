@@ -1,3 +1,9 @@
+## [1.1.2-rc.7](https://github.com/trust0-project/node/compare/v1.1.2-rc.6...v1.1.2-rc.7) (2025-04-20)
+
+### Bug Fixes
+
+* start database when loading mercury if not already started ([9292510](https://github.com/trust0-project/node/commit/92925104687cb2e22dcbe7ef7ee2a85faad24381))
+
 ## [1.1.2-rc.6](https://github.com/trust0-project/node/compare/v1.1.2-rc.5...v1.1.2-rc.6) (2025-04-19)
 
 ### Bug Fixes
