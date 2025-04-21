@@ -60,10 +60,8 @@ export class Network {
     message: ProtocolMessage
   ): Promise<Uint8Array> {
     await this.load();
-    const packed = await this.mercury.packMessage(
-      SDK.Domain.Message.fromJson(message)
-    );
-    return Buffer.from(packed);
+    const packed = SDK.Domain.Message.fromJson(message)
+    return Buffer.from(JSON.stringify(packed));
   }
 
   async getKeyPair(email: string) {
@@ -103,7 +101,7 @@ export class Network {
 
   public async unpackMessage(message: Uint8Array) {
     await this.load();
-    const unpacked = await this.mercury.unpackMessage(Buffer.from(message).toString());
+    const unpacked = SDK.Domain.Message.fromJson(Buffer.from(message).toString());
     return unpacked;
   }
 
