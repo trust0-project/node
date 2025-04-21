@@ -95,7 +95,7 @@ export class Network {
         await this.pluto.storeDID(did, didKeys, email)
         keyInfo = await this.p2p.services.keychain.importKey(keyName, nodeEd25519Key);
     } finally {
-        return this.p2p.services.keychain.exportKey(keyInfo!.id);
+        return this.p2p.services.keychain.exportKey(keyInfo!.name);
     }
 }
 
