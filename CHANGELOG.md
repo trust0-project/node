@@ -1,3 +1,9 @@
+## [1.1.2-rc.13](https://github.com/trust0-project/node/compare/v1.1.2-rc.12...v1.1.2-rc.13) (2025-04-21)
+
+### Bug Fixes
+
+* env vars fix ([3258373](https://github.com/trust0-project/node/commit/32583733d2f53c4cd50700ab0eb1ca0bf11a8d4c))
+
 ## [1.1.2-rc.12](https://github.com/trust0-project/node/compare/v1.1.2-rc.11...v1.1.2-rc.12) (2025-04-21)
 
 ### Bug Fixes
