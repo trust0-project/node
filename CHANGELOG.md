@@ -1,3 +1,9 @@
+## [1.1.2-rc.12](https://github.com/trust0-project/node/compare/v1.1.2-rc.11...v1.1.2-rc.12) (2025-04-21)
+
+### Bug Fixes
+
+* remove didcomm usage ([a198fbf](https://github.com/trust0-project/node/commit/a198fbf161170bd1e617f76c5b049e8df4f02d38))
+
 ## [1.1.2-rc.11](https://github.com/trust0-project/node/compare/v1.1.2-rc.10...v1.1.2-rc.11) (2025-04-20)
 
 ### Bug Fixes
